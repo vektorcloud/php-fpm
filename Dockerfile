@@ -1,4 +1,4 @@
-FROM vektorlab/dumb-init:latest
+FROM quay.io/vektorcloud/dumb-init:latest
 
 RUN apk add --no-cache ca-certificates \
     nginx mysql-client libssh2 curl libpng \
