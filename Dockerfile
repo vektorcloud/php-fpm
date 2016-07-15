@@ -13,8 +13,7 @@ RUN apk add --no-cache php php-fpm php-json php-zlib php-xml \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/php-fpm.conf /etc/php/
 COPY conf/php.ini /etc/php/
+COPY run.sh /run.sh
 
 EXPOSE 80
-VOLUME /srv/www
-WORKDIR /srv/www
 CMD /bin/sh /app/run.sh
