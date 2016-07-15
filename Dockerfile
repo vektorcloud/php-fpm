@@ -16,4 +16,4 @@ COPY conf/php.ini /etc/php/
 COPY run.sh /run.sh
 
 EXPOSE 80
-CMD /bin/sh /app/run.sh
+CMD /bin/sh /run.sh
