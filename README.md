@@ -1,6 +1,6 @@
 # php-fpm
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/php-fpm)
 
 Alpine-based image with nginx + php-fpm
 
