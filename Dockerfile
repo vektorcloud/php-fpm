@@ -5,10 +5,28 @@ RUN apk add --no-cache ca-certificates \
     freetype libjpeg-turbo libgcc libxml2 \
     libstdc++ icu-libs libltdl libmcrypt msmtp
 
-RUN apk add --no-cache php php-fpm php-json php-zlib php-xml \
-    php-pdo php-phar php-openssl php-pdo_mysql php-mysqli \
-    php-gd php-mcrypt php-curl php-opcache php-ctype \
-    php-intl php-bcmath php-dom php-xmlreader
+RUN apk add --no-cache \
+  php7 \
+  php7-session \
+  php7-openssl \
+  php7-phar \
+  php7-pdo_odbc \
+  php7-pdo_mysql \
+  php7-fpm \
+  php7-ctype \
+  php7-curl \
+  php7-json \
+  php7-dom \
+  php7-pdo \
+  php7-xmlreader \
+  php7-pdo_sqlite \
+  php7-opcache \
+  php7-gd \
+  php7-xml \
+  php7-pdo_pgsql \
+  php7-pdo_dblib \
+  php7-bcmath \
+  php7-pecl-mcrypt
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/php-fpm.conf /etc/php/
@@ -16,4 +34,4 @@ COPY conf/php.ini /etc/php/
 COPY run.sh /run.sh
 
 EXPOSE 80
-CMD /bin/sh /run.sh
+ENTRYPOINT ["/run.sh"]
